@@ -1,0 +1,11 @@
+/Users/zhukewei/Desktop/ToMeet/bin/Debug/netcoreapp2.0/ToMeet.deps.json
+/Users/zhukewei/Desktop/ToMeet/bin/Debug/netcoreapp2.0/ToMeet.runtimeconfig.json
+/Users/zhukewei/Desktop/ToMeet/bin/Debug/netcoreapp2.0/ToMeet.runtimeconfig.dev.json
+/Users/zhukewei/Desktop/ToMeet/bin/Debug/netcoreapp2.0/ToMeet.dll
+/Users/zhukewei/Desktop/ToMeet/bin/Debug/netcoreapp2.0/ToMeet.pdb
+/Users/zhukewei/Desktop/ToMeet/obj/Debug/netcoreapp2.0/ToMeet.csprojAssemblyReference.cache
+/Users/zhukewei/Desktop/ToMeet/obj/Debug/netcoreapp2.0/ToMeet.csproj.CoreCompileInputs.cache
+/Users/zhukewei/Desktop/ToMeet/obj/Debug/netcoreapp2.0/ToMeet.AssemblyInfoInputs.cache
+/Users/zhukewei/Desktop/ToMeet/obj/Debug/netcoreapp2.0/ToMeet.AssemblyInfo.cs
+/Users/zhukewei/Desktop/ToMeet/obj/Debug/netcoreapp2.0/ToMeet.dll
+/Users/zhukewei/Desktop/ToMeet/obj/Debug/netcoreapp2.0/ToMeet.pdb
