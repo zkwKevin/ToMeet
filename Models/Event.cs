@@ -7,7 +7,7 @@ namespace ToMeet.Models{
         public string Publisher {get; set;}
         public string Title{get; set;}
         [Display(Name="Start Time")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.Time)]
         public DateTime StartTime {get; set;}
         public int Number{get; set;}
         public string Location {get; set;}

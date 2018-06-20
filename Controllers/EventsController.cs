@@ -11,17 +11,25 @@ namespace ToMeet.Controllers
 {
     public class EventsController : Controller
     {
+        //声明了一个私有变量，保存 ToMeetContext 的引用
         private readonly ToMeetContext _context;
 
+        //要创建一个 EventsController，你必须提供一个能匹配 ToMeetContext的对象
         public EventsController(ToMeetContext context)
         {
             _context = context;
         }
 
         // GET: Events
-        public async Task<IActionResult> Index()
+       
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Event.ToListAsync());
+            var events = from e in _context.Event
+                        select e;
+            if(!String.IsNullOrEmpty(searchString)){
+                events = events.Where(e => e.Location.Contains(searchString));
+            }
+            return View(await events.ToListAsync());
         }
 
         // GET: Events/Details/5
@@ -73,6 +81,7 @@ namespace ToMeet.Controllers
             }
 
             var @event = await _context.Event.SingleOrDefaultAsync(m => m.ID == id);
+            //var @event = await _context.Event.FindAsync(id);
             if (@event == null)
             {
                 return NotFound();
@@ -91,7 +100,7 @@ namespace ToMeet.Controllers
             {
                 return NotFound();
             }
-
+            //verifies that the data submitted in the form can be used to modify (edit or update) a Event object
             if (ModelState.IsValid)
             {
                 try
