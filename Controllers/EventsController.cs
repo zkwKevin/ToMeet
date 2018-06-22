@@ -22,14 +22,28 @@ namespace ToMeet.Controllers
 
         // GET: Events
        
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, string eventTitle)
         {
+            //all title string list
+            IQueryable<string> titleQuery = from e in _context.Event
+                                        orderby e.Title
+                                        select  e.Title;
+                                        
             var events = from e in _context.Event
                         select e;
+
+            if(!String.IsNullOrEmpty(eventTitle)){
+                events = events.Where(e => e.Title == eventTitle);
+            }
+
             if(!String.IsNullOrEmpty(searchString)){
                 events = events.Where(e => e.Location.Contains(searchString));
             }
-            return View(await events.ToListAsync());
+
+            var EventTitleMV = new EventTitleViewModel();
+            EventTitleMV.titles = new SelectList(await titleQuery.Distinct().ToListAsync());
+            EventTitleMV.events = await events.ToListAsync();
+            return View(EventTitleMV);
         }
 
         // GET: Events/Details/5
@@ -61,7 +75,7 @@ namespace ToMeet.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Publisher,Title,StartTime,Number,Location,Description")] Event @event)
+        public async Task<IActionResult> Create([Bind("ID,Publisher,Title,StartTime,Number,Location,Description,Interest")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +108,7 @@ namespace ToMeet.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Publisher,Title,StartTime,Number,Location,Description")] Event @event)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Publisher,Title,StartTime,Number,Location,Description,Interest")] Event @event)
         {
             if (id != @event.ID)
             {

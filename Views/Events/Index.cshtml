@@ -1,4 +1,4 @@
-@model IEnumerable<ToMeet.Models.Event>
+@model ToMeet.Models.EventTitleViewModel
 
 
 @{
@@ -8,6 +8,9 @@
 <h2>Index</h2>
 <form asp-controller="Events" asp-action="index" method="GET">
     <p>
+        <select asp-for="eventTitle" asp-items="Model.titles">
+            <option value="">All</option>
+        </select>
         Search:<input type="text" name="searchString"/>
         <input type="submit" value="Filter"/>
     </p>
@@ -15,32 +18,36 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Publisher)
+                    @Html.DisplayNameFor(model => model.events[0].Publisher)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Title)
+                    @Html.DisplayNameFor(model => model.events[0].Title)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.StartTime)
+                    @Html.DisplayNameFor(model => model.events[0].StartTime)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Number)
+                    @Html.DisplayNameFor(model => model.events[0].Number)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Location)
+                    @Html.DisplayNameFor(model => model.events[0].Location)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Description)
+                    @Html.DisplayNameFor(model => model.events[0].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.events[0].Interest)
                 </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.events) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Publisher)
@@ -59,6 +66,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Interest)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

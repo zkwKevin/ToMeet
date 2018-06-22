@@ -7,6 +7,7 @@ namespace ToMeet.Models
     {
         public List<Event> events;
         public SelectList titles;
+        // selected title
         public string eventTitle {get;set;}
     }
 }
