@@ -23,23 +23,26 @@
     </environment>
 </head>
 <body>
-   
-    <div class="topnav" id="myTopnav">
-        <a class="active" asp-area="" asp-controller="Home" asp-action="Index">ToMeet</a> 
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-        <div class="search-container">
-            <form asp-controller="Events" asp-action="index" method="GET">
-                <input type="text" placeholder="Search.." name="searchString">
-            </form>
-        </div>    
-        <a class="right" asp-area="" asp-controller="Home" asp-action="Contact">Log in</a>     
-        <a class="right" asp-area="" asp-controller="Home" asp-action="Contact">Sign up</a>    
-        <a class="right" asp-area="" asp-controller="Home" asp-action="Contact">Publish</a>
-        <a class="right" asp-area="" asp-controller="Events" asp-action="Index">Explore</a>
+    <ul>
+        <li class="left"><a class="active" asp-area="" asp-controller="Home" asp-action="Index">ToMeet</a></li>
         
-    </div>
+        <li class="left">
+            <div class="search-container">
+            <form asp-controller="Events" asp-action="index" method="GET">
+                <input type="text" placeholder="Search" name="searchString">
+            </form>
+            </div>
+        </li>
+        <li class="handel">
+            <a><i class="fa fa-bars"></i></a>
+        </li>
+        <li class='others'><a  asp-area="" asp-controller="Home" asp-action="Contact">Log in</a></li>
+        <li class='others'><a  asp-area="" asp-controller="Home" asp-action="Contact">Sign up</a> </li>
+        <li class='others'><a  asp-area="" asp-controller="Home" asp-action="Contact">Publish</a></li>
+        <li class='others'><a  asp-area="" asp-controller="Events" asp-action="Index">Explore</a></li>
+    </ul>
+
+    
 
     <div class="container body-content">
         @RenderBody()

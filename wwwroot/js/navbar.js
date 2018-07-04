@@ -1,9 +1,5 @@
-function myFunction(){
-    var x = document.getElementById("myTopnav");
-    if (x.className ==="topnav") {
-        x.className += " responsive";
-    }else {
-        x.className ="topnav";
-    }
-}
+$(".handel").on('click', function(){
+    $("ul").toggleClass("stretch");
+    $("ul li.others a").toggleClass("expand");
+});
 
