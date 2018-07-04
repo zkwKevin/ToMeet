@@ -6,39 +6,41 @@
     <title>@ViewData["Title"] - ToMeet</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <!-- <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /> -->
+        <!-- <link rel="stylesheet" href="~/css/site.css" /> -->
+        <link rel="stylesheet" href="~/css/test.css" />
         
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+        <!-- <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" /> -->
+        <!-- <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" /> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <link rel="stylesheet" href="~/css/test.css" />
+        <link rel="stylesheet" href="~/css/navbar.css" />
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Events" asp-action="Index" class="navbar-brand">ToMeet</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+   
+    <div class="topnav" id="myTopnav">
+        <a class="active" asp-area="" asp-controller="Home" asp-action="Index">ToMeet</a> 
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="search-container">
+            <form asp-controller="Events" asp-action="index" method="GET">
+                <input type="text" placeholder="Search.." name="searchString">
+            </form>
+        </div>    
+        <a class="right" asp-area="" asp-controller="Home" asp-action="Contact">Log in</a>     
+        <a class="right" asp-area="" asp-controller="Home" asp-action="Contact">Sign up</a>    
+        <a class="right" asp-area="" asp-controller="Home" asp-action="Contact">Publish</a>
+        <a class="right" asp-area="" asp-controller="Events" asp-action="Index">Explore</a>
+        
+    </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -66,6 +68,7 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/navbar.js" ></script>
     </environment>
 
     @RenderSection("Scripts", required: false)

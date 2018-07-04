@@ -43,6 +43,7 @@ namespace ToMeet
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseUrls(urls: "http://localhost:5000")
                 .Build();
         //  public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
         //     WebHost.CreateDefaultBuilder(args)
