@@ -20,12 +20,12 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <link rel="stylesheet" href="~/css/test.css" />
         <link rel="stylesheet" href="~/css/navbar.css" />
-        <link rel="stylesheet" href="~/css/login.css" />
+        <link rel="stylesheet" href="~/css/loginsign.css" />
     </environment>
 </head>
 <body>
     <!--Navbar-->
-    <ul>
+    <ul class="nav">
         <li class="left"><a class="active" asp-area="" asp-controller="Home" asp-action="Index">ToMeet</a></li>
         <li class="handel">
             <a><i class="fa fa-bars"></i></a>
@@ -38,23 +38,50 @@
             
         </li>
     
-        <li class='others min'><a  asp-area="" asp-controller="Home" asp-action="Contact">Log in</a></li>
-        <li class='others min'><a class="signup" >Sign up</a> </li>
+        <li class='others min'><a class="signup" >Log in</a></li>
+        <li class='others min'><a class="signup" >Sign up</a></li>
         <li class='others min'><a  asp-area="" asp-controller="Home" asp-action="About">Publish</a></li>
         <li class='others min'><a  asp-area="" asp-controller="Events" asp-action="Index">Explore</a></li>
     </ul>
     <!--Sign up-->
     <div id="modal-wrapper" class="modal">
         <form class="modal-content animate" asp-action="" method="">
-            <div class="container">
-                <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+            <div class="container1">
+                <span class="close" title="Close PopUp">&times;</span>
+            </div>
+            <div class="container2">
+                
+                <a href="#" class="fb btn">
+                    <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                </a>
+                <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+                    </i> Login with Google+
+                </a>
+                
+                <div class="hr-sect">or</div>
+                <input type="text" placeholder="Enter Email" name="uname">
+                <input type="password" placeholder="Enter Password" name="psw">        
+                <!-- <button type="submit">Login</button> -->
+                <input type="submit" value="Login">
+                <input type="checkbox" style="text-decoration:none; text-align:left;"> 
+                <label>Remember me</label>  
+                <div class="forgotpw">
+                    <a href="#" style="text-decoration:none;">Forgot Password ?</a>
+                </div>
+                <hr>
+                <p style="margin-top:15px;text-align:center;">Don’t have an account? 
+                    <a href="#"style="text-decoration:none;">Sign up</a>
+                </p>
             </div>
         </form>
     </div>
-    
+
+
+
+    <!--content-->
     <div class="container body-content">
         @RenderBody()
-        <hr />
+
         <footer>
             <p>&copy; 2018 - ToMeet</p>
         </footer>
