@@ -18,18 +18,20 @@ ul{
 
 ul li.left {
     float: left;
-}
+} 
 
 ul li.others {
     float: right; 
 }
 
-.handel {
+ul li.handel {
     float: right;
+    display: none;
+    cursor: pointer;
 }
 li a {
     
-    display: inline-block;
+    display: block;
     color: #070000;
     text-align: center;
     padding: 14px 16px;
@@ -46,20 +48,10 @@ li a:hover{
     background-color: #ffb731;
 }
 
-.handel {
-    display: none;
-    cursor: pointer;
-}
-
-@media screen and (max-width:768px) {
+@media screen and (max-width:1024px) {
     ul {
         max-height: 48px;
     }
-    /* ul li {
-        display: none;
-    } 
-    ul li.left {display: inline-block;} 
-    ul li.handel {display:block;}  */
 
    
     ul li.handel {display:block;} 
@@ -77,20 +69,36 @@ li a:hover{
         max-height: 240px;
     }
 
-    .expand {
-        display: block;
-    } 
+}
 
+@media screen and (max-width:375px){
+    ul {
+        max-height: 48px;
+    }
+
+    .stretch {
+        max-height: 270px;
+    }
+
+    ul li.handel {display:block;} 
+    
+    ul li.min
+     {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0px;
+        display: block;
+        text-align: center;
+    }  
 }
 
 
 
 /* SearchBar */
-.topnav .search-container {
-    float: left;
-   
+.left.min {
+    float: left; 
   }
-input[type=text] {
+.left.min input[type=text] {
     width: 90px;
     padding: 6px 0px 6px 30px;
     margin-top: 8px;
@@ -107,10 +115,11 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
   }
   
-input[type=text]:focus {
+.left.min input[type=text]:focus {
     width: 100%;
-    background-color:white;
-    
+    background-color:white;  
 }
+
+
 
 

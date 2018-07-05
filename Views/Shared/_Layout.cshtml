@@ -20,30 +20,38 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <link rel="stylesheet" href="~/css/test.css" />
         <link rel="stylesheet" href="~/css/navbar.css" />
+        <link rel="stylesheet" href="~/css/login.css" />
     </environment>
 </head>
 <body>
+    <!--Navbar-->
     <ul>
         <li class="left"><a class="active" asp-area="" asp-controller="Home" asp-action="Index">ToMeet</a></li>
-        
-        <li class="left">
-            <div class="search-container">
-            <form asp-controller="Events" asp-action="index" method="GET">
-                <input type="text" placeholder="Search" name="searchString">
-            </form>
-            </div>
-        </li>
         <li class="handel">
             <a><i class="fa fa-bars"></i></a>
         </li>
-        <li class='others'><a  asp-area="" asp-controller="Home" asp-action="Contact">Log in</a></li>
-        <li class='others'><a  asp-area="" asp-controller="Home" asp-action="Contact">Sign up</a> </li>
-        <li class='others'><a  asp-area="" asp-controller="Home" asp-action="Contact">Publish</a></li>
-        <li class='others'><a  asp-area="" asp-controller="Events" asp-action="Index">Explore</a></li>
-    </ul>
-
+        <li class="left min">
+            
+            <form asp-controller="Events" asp-action="index" method="GET">
+                <input type="text" placeholder="Search" name="searchString">
+            </form>
+            
+        </li>
     
-
+        <li class='others min'><a  asp-area="" asp-controller="Home" asp-action="Contact">Log in</a></li>
+        <li class='others min'><a class="signup" >Sign up</a> </li>
+        <li class='others min'><a  asp-area="" asp-controller="Home" asp-action="About">Publish</a></li>
+        <li class='others min'><a  asp-area="" asp-controller="Events" asp-action="Index">Explore</a></li>
+    </ul>
+    <!--Sign up-->
+    <div id="modal-wrapper" class="modal">
+        <form class="modal-content animate" asp-action="" method="">
+            <div class="container">
+                <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+            </div>
+        </form>
+    </div>
+    
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -51,6 +59,17 @@
             <p>&copy; 2018 - ToMeet</p>
         </footer>
     </div>
+
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=2110219079267346&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
