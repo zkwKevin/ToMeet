@@ -3,7 +3,8 @@
   }
 /* Background-div*/
 .modal {
-	display:none;
+    display:none;
+    /* visibility: visible; */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -141,13 +142,18 @@ hr {
     position: relative;
 }
 
-.animate {
+/* .animate {
     animation: zoom 0.4s;
-}
+} */
 
-@keyframes zoom {
+@keyframes zoom1 {
     from {transform: scale(0)} 
     to {transform: scale(1)}
+}
+
+@keyframes zoom2 {
+    from {transform: scale(1)} 
+    to {transform: scale(0)}
 }
 
 

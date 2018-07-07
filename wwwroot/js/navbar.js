@@ -1,20 +1,23 @@
 $(".handel").on('click', function(){
     $("ul").toggleClass("stretch");
+    
 });
-
-// $(document).click(function(e){
-//     if (!$(e.target).is(".handel")) {
-//          $("ul").removeClass("stretch");          
-//   }
-// });
+//If user clicks anywhere outside of the modal, Modal will close
+$(document).click(function(e){
+    if (".stretch") {
+        if(!$(e.target).parents().andSelf().is('ul')){
+         $("ul").removeClass("stretch"); }             
+  }
+});
 //open signup
 $(".signup").on('click', function(){
     $('#modal-wrapper').css({display: "block"});
+    $('.animate').css( {animation: "zoom1 0.4s"}).on('animationend ', ShowTheElementAfterAnimation);
     $("ul").removeClass("stretch");
 });
 //close signup
 $(".close").on('click', function(){
-    $('#modal-wrapper').css({display: "none"});
+    $('.animate').css( {animation: "zoom2 0.4s"}).on('animationend ', HideTheElementAfterAnimation);
 });
 //If user clicks anywhere outside of the modal, Modal will close
 $(document).click(function(e){
@@ -24,5 +27,14 @@ $(document).click(function(e){
         }       
   }
 });
+
+   
+function HideTheElementAfterAnimation(){
+    $("#modal-wrapper").css("display", "none");
+}
+
+function ShowTheElementAfterAnimation(){
+    $("#modal-wrapper").css("display", "block");
+}
 
 
