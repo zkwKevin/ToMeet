@@ -10,6 +10,7 @@
         <!-- <link rel="stylesheet" href="~/css/site.css" /> -->
         <link rel="stylesheet" href="~/css/test.css" />
         
+        
     </environment>
     <environment exclude="Development">
         <!-- <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -17,7 +18,8 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" /> -->
         <!-- <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" /> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
         <link rel="stylesheet" href="~/css/test.css" />
         <link rel="stylesheet" href="~/css/navbar.css" />
         <link rel="stylesheet" href="~/css/loginsign.css" />
@@ -38,14 +40,16 @@
             
         </li>
     
-        <li class='others min'><a class="signup" >Log in</a></li>
-        <li class='others min'><a class="signup" >Sign up</a></li>
+        <li class='others min'><a class="login unique" >Log in</a></li>
+        <li class='others min'><a class="signup unique" >Sign up</a></li>
         <li class='others min'><a  asp-area="" asp-controller="Home" asp-action="About">Publish</a></li>
         <li class='others min'><a  asp-area="" asp-controller="Events" asp-action="Index">Explore</a></li>
     </ul>
-    <!--Sign up-->
+    
+    
     <div id="modal-wrapper" class="modal">
-        <form class="modal-content animate" asp-action="" method="">
+        <!--Login-->
+        <form class="modal-content1 animate" asp-action="" method="">
             <div class="container1">
                 <span class="close" title="Close PopUp">&times;</span>
             </div>
@@ -59,9 +63,8 @@
                 </a>
                 
                 <div class="hr-sect">or</div>
-                <input type="text" placeholder="Enter Email" name="uname">
+                <input type="text" placeholder="Enter Email" name="uemail">
                 <input type="password" placeholder="Enter Password" name="psw">        
-                <!-- <button type="submit">Login</button> -->
                 <input type="submit" value="Login">
                 <input type="checkbox" style="text-decoration:none; text-align:left;"> 
                 <label>Remember me</label>  
@@ -70,11 +73,57 @@
                 </div>
                 <hr>
                 <p style="margin-top:15px;text-align:center;">Don’t have an account? 
-                    <a href="#"style="text-decoration:none;">Sign up</a>
+                    <a class="switchToSignup">Sign up</a>
+                </p>
+            </div>
+        </form>
+        <!--SignUp-->
+        <form class="modal-content2 animate" asp-action="" method="">
+            <div class="container1">
+                <span class="close" title="Close PopUp">&times;</span>
+            </div>
+            <div class="container2">
+                
+                <a href="#" class="fb btn">
+                    <i class="fa fa-facebook fa-fw"></i> Sign up with Facebook
+                </a>
+                <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+                    </i> Sign up with Google+
+                </a>
+                
+                <div class="hr-sect">or</div>
+                <input type="text" placeholder="Enter Email" name="uemail">
+                <input type="text" placeholder="Enter First name" name="ufname">
+                <input type="text" placeholder="Enter Last name" name="ulname">
+                <input type="password" placeholder="Enter Password" name="psw">  
+                <h3>Birthday</h3> 
+                <div style="text-align:center; margin:0 0 8px 0">
+                    <select>
+                        <option value="" selected disabled hidden>Day</option>
+                        <option value="1">One</option>
+                    </select>  
+                    <select>
+                        <option value="" selected disabled hidden>Month</option>
+                        <option value="1">One</option>
+                    </select>  
+                    <select>
+                        <option value="" selected disabled hidden>Year</option>
+                        <option value="1">One</option>
+                    </select>
+                </div>
+                <input type="submit" value="Sign up">
+                <input type="checkbox" style="text-decoration:none; text-align:left;"> 
+                <label>I don’t want to receive marketing messages from ToMeet.</label>  
+                <hr>
+                <p style="margin-top:15px;text-align:center;">Already have an account? 
+                    <a class="switchToLogin">Login</a>
                 </p>
             </div>
         </form>
     </div>
+
+    
+
 
 
 
