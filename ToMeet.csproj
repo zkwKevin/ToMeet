@@ -3,16 +3,16 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Humanizer" Version="2.3.3" />
-    <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore" Version="2.4.20" />
-    <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore.Native.osx-x64" Version="2.4.20" />
-    <PackageReference Include="Microsoft.AspNetCore.All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
-    <PackageReference Include="React.AspNet" Version="3.3.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="2.8.0" /> 
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.8.0" /> 
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.8.0" /> 
-    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="2.8.0" />
+    <PackageReference Include="Humanizer" Version="2.3.3"/>
+    <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore" Version="2.4.20"/>
+    <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore.Native.osx-x64" Version="2.4.20"/>
+    <PackageReference Include="Microsoft.AspNetCore.All"/>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0"/>
+    <PackageReference Include="React.AspNet" Version="3.3.0"/>
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="2.8.0"/>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.8.0"/>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.8.0"/>
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="2.8.0"/>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.1"/>
   </ItemGroup>
- 
 </Project>

@@ -34,8 +34,10 @@ namespace ToMeet
             services.AddReact();
             services.AddMvc();
 
+            // services.AddDbContext<ToMeetContext>(options =>
+            //       options.UseSqlite("Data Source=ToMeet.db"));
             services.AddDbContext<ToMeetContext>(options =>
-                  options.UseSqlite("Data Source=ToMeet.db"));
+                    options.UseMySql(Configuration.GetConnectionString("MySQLConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
